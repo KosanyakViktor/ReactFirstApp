@@ -1,16 +1,40 @@
+// //index.js
+
 const rootElement = document.querySelector('#root');
 
-// const greetingElem = document.createElement('div');
-// greetingElem.classList.add('greeting');
-// greetingElem.textContent = 'Hello, React!';
+// const renderGreeting = elem => {
+//     const containerElem = document.createElement('div');
+//     containerElem.classList.add('greeting');
+    
+//     const titleElem = document.createElement('h1');
+//     titleElem.classList.add('greeting__title');
+//     titleElem.textContent = 'Hello, world!'; 
+    
+//     const textElem = document.createElement('p');
+//     textElem.classList.add('greeting__text');
+//     textElem.textContent = 'I\'m learning React';
 
-// rootElement.append(greetingElem);
+//     containerElem.append(titleElem, textElem);
+
+//     elem.append(containerElem);
+// };
+
+// renderGreeting(rootElement);
 
 
-const greetingElem = React.createElement(
-   'div',
-   { className: 'greeting' },
-   'Hello, React!'
+const element = React.createElement(
+  'div',
+  {className:'greeting'},
+    React.createElement(
+      'div',
+      { className:'greeting__title' },
+      'Hello, world!'
+    ),
+    React.createElement(
+      'div',
+      { className:'greeting__text' },
+      'I\'m learnig React'
+    )
 );
 
-ReactDOM.render(greetingElem, rootElement);
+ReactDOM.render(element, rootElement);
